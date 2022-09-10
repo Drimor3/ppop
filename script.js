@@ -2,6 +2,8 @@ window.onload = ( () =>{
     let speedWall = 3;
     let sppedBallX = 4;
     let sppedBallY = 4;
+    let mover = [];
+    let i = 0;
     const screenWidth = window.screen.width - 100;
     const screenHeight = window.screen.height - 200;
 
@@ -28,10 +30,26 @@ window.onload = ( () =>{
     gameContainer.addChild(wallLeft)
     app.stage.addChild(gameContainer)
 
-    document.addEventListener('touchend', (george) =>{
-        ticker.add(()=>{
-            wallLeft.position.y += sppedBallY;
-        })
+    document.addEventListener('click', (george) =>{
+            if(i === 0){
+                ticker.add(()=>{
+                    wallLeft.position.y += sppedBallY;
+                })
+                i++
+            }
+            else if(i > 0){
+                ticker.add(()=>{
+                    wallLeft.position.y -= (sppedBallY * 2);
+                })
+                i -=2
+            }
+            else if (i<0){
+                ticker.add(()=>{
+                    wallLeft.position.y += (sppedBallY * 2);
+                })
+                i +=2
+            }
+
     })
 
 
