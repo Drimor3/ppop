@@ -30,7 +30,7 @@ window.onload = ( () =>{
     gameContainer.addChild(wallLeft)
     app.stage.addChild(gameContainer)
 
-    document.addEventListener('click', (george) =>{
+    document.addEventListener('touchend', (george) =>{
             if(i === 0){
                 ticker.add(()=>{
                     wallLeft.position.y += sppedBallY;
