@@ -15,8 +15,8 @@ window.onload = ( () =>{
     let i = 0;
     let ii = 0;
     let iii = 0;
-    const screenWidth = 500;
-    const screenHeight = 250;
+    const screenWidth = 700;
+    const screenHeight = 400;
 
     let ticker = PIXI.Ticker.shared;
     ticker.autoStart = false;
