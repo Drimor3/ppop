@@ -1,9 +1,9 @@
 window.onload = ( () =>{
 
-    let arrmove = [-2, 2]; //некий массив чисел
+    let arrmove = [-2, 2];
     let movesquareY = arrmove[Math.floor(Math.random()*(arrmove.length))];
 
-    let arrmove2 = [-1, 1]; //некий массив чисел
+    let arrmove2 = [-1, 1];
     let movesquareX = arrmove2[Math.floor(Math.random()*(arrmove2.length))];
 
 
@@ -135,13 +135,15 @@ window.onload = ( () =>{
     ticker.add(()=>{
         wallRight.position.y = square.position.y
         if(square.position.y > screenHeight - square.height){
+            movesquareY = 0
             ticker.add(()=>{
-                square.position.y += movesquareY * -1
+                square.position.y -= 2
             })
         }
         else if(square.position.y < 0){
+            movesquareY = 0
             ticker.add(()=>{
-                square.position.y += movesquareY
+                square.position.y += 2
             })
 
         }
